@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Demande de Flexible</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(135deg, #004080, #00aaff);
+      color: white;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    section {
+      max-width: 500px;
+      margin: auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    button {
+      margin-top: 15px;
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, #004080, #00aaff);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #003366, #0099ff);
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Vous Besoins</h1>
+</header>
+
+<section>
+  <h2>Veuillez remplir le formulaire</h2>
+  <form id="whatsappForm">
+    
+    <label for="reference">Référence du Flexible,Tuyaux,Embouts& Machines :</label>
+    <input type="text" id="reference" placeholder="Ex: FLEX-123" required>
+
+    <label for="quantite">Quantité :</label>
+    <input type="number" id="quantite" min="1" required>
+
+    <label for="type">Type :</label>
+    <select id="type" required>
+      <option value="">-- Choisir --</option>
+      <option value="basse">Flexibles Hydraulique</option>
+      <option value="haute">Tuyaux industriels</option>
+      <option value="tres-haute">Embouts Hydrauliques</option>
+      <option value="thermoplastique">Machines & Outillages</option>
+    </select>
+
+    <!-- الزر داخل الرابط -->
+    <a id="whatsappLink" href="#" target="_blank">
+      <button type="button">Envoyer la demande via WhatsApp</button>
+    </a>
+  </form>
+</section>
+
+<script>
+  // تحديث رابط واتساب تلقائيًا عند إدخال البيانات
+  const form = document.getElementById("whatsappForm");
+  const link = document.getElementById("whatsappLink");
+  const phone = "212600805518"; // ضع رقمك هنا
+
+  function updateWhatsAppLink() {
+    const reference = document.getElementById("reference").value;
+    const quantite = document.getElementById("quantite").value;
+    const type = document.getElementById("type").value;
+
+    const message = `Bonjour, je veux demander :%0A- Référence : ${reference}%0A- Quantité : ${quantite}%0A- Type : ${type}`;
+    link.href = `https://api.whatsapp.com/send?phone=${phone}&text=${message}`;
+  }
+
+  form.addEventListener("input", updateWhatsAppLink);
+</script>
+
+</body>
+</html>
