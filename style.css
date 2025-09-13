@@ -6,13 +6,13 @@ html, body {
     width: 100%;
     font-family: 'Arial', sans-serif;
     box-sizing: border-box;
-    font-size: clamp(16px, 2vw, 22px); /* نص أساسي ديناميكي */
+    font-size: clamp(16px, 2vw, 22px);
     line-height: 1.6;
 }
 
 /* ---------- HEADER ---------- */
 header {
-    background: linear-gradient(rgba(0,64,128,0.6), rgba(0,170,255,0.6)), 
+    background: linear-gradient(rgba(0,64,128,0.6), rgba(0,170,255,0.6)),
                 url('header-bg.jpg') no-repeat center center;
     background-size: cover;
     color: white;
@@ -31,7 +31,6 @@ header h1 {
     margin: 0;
 }
 
-/* ---------- NAVIGATION ---------- */
 nav {
     background-color: #0066cc;
     display: flex;
@@ -39,7 +38,7 @@ nav {
     flex-wrap: wrap;
     padding: 12px;
     border-radius: 8px;
-    margin: 10px 20px;
+    margin: 10px 0;
 }
 
 nav a {
@@ -58,19 +57,16 @@ nav a:hover {
     transform: scale(1.1);
 }
 
-/* ---------- SECTION ---------- */
+/* ---------- SECTIONS ---------- */
 section {
     width: 90%;
     max-width: 1200px;
-    min-height: 80vh;
     margin: 30px auto;
-    background-color: rgba(255, 255, 255, 0.9);
     padding: 25px 35px;
+    background-color: rgba(255,255,255,0.9);
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    display: block;
 }
 
 section h2 {
@@ -81,18 +77,8 @@ section h2 {
 }
 
 section p, section li {
-    line-height: 1.8;
-    margin: 12px 0;
     font-size: clamp(16px, 2vw, 22px);
-}
-
-/* ---------- UL ---------- */
-ul {
-    padding-left: 20px;
-}
-
-ul li.arabic {
-    padding-right: 15px;
+    margin: 12px 0;
 }
 
 /* ---------- PRODUCTS ---------- */
@@ -106,22 +92,15 @@ ul li.arabic {
 .product {
     flex: 1 1 250px;
     max-width: 300px;
-    min-height: 350px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255,255,255,0.8);
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     padding: 20px;
     text-align: center;
-    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.product:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
 }
 
 .product img {
@@ -140,48 +119,42 @@ ul li.arabic {
 .product h3 {
     font-size: clamp(20px, 3vw, 36px);
     color: #004080;
-    margin-bottom: 10px;
 }
 
 .product p {
     font-size: clamp(16px, 2vw, 22px);
-    color: #333;
-    line-height: 1.5;
-    margin: 3px 0;
 }
 
-/* ---------- BUTTONS ---------- */
+/* ---------- BUTTONS & FORMS ---------- */
 button {
+    font-size: clamp(16px, 2vw, 22px);
+    padding: 12px 25px;
+    border-radius: 8px;
+    border: none;
     background: linear-gradient(135deg, #004080, #00aaff);
     color: white;
-    border: none;
-    padding: 12px 25px;
     cursor: pointer;
-    border-radius: 8px;
-    transition: background 0.3s, transform 0.2s;
-    font-size: clamp(16px, 2vw, 22px);
+    transition: transform 0.2s, background 0.3s;
 }
 
 button:hover {
-    background: linear-gradient(135deg, #003366, #0099ff);
     transform: scale(1.05);
+    background: linear-gradient(135deg, #003366, #0099ff);
 }
 
-/* ---------- FORMS ---------- */
 form input, form select, form textarea {
+    font-size: clamp(16px, 2vw, 22px);
     width: 100%;
     padding: 12px;
     margin: 10px 0 20px 0;
-    border: 1px solid #ccc;
     border-radius: 8px;
-    transition: border 0.3s, box-shadow 0.3s;
-    font-size: clamp(16px, 2vw, 22px);
+    border: 1px solid #ccc;
 }
 
 form input:focus, form select:focus, form textarea:focus {
+    outline: none;
     border-color: #0066cc;
     box-shadow: 0 0 8px rgba(0,102,204,0.4);
-    outline: none;
 }
 
 /* ---------- RESPONSIVE ---------- */
@@ -189,26 +162,17 @@ form input:focus, form select:focus, form textarea:focus {
     header h1 {
         font-size: clamp(28px, 8vw, 48px);
     }
-
     section {
         width: 95%;
-        min-height: 70vh;
         padding: 15px 20px;
     }
-
-    section p, section li {
-        font-size: 16px;
-    }
-
     .product {
         width: 100%;
         min-height: 300px;
     }
-
     .product img {
         height: 200px;
     }
-
     nav a {
         font-size: clamp(16px, 4vw, 20px);
     }
