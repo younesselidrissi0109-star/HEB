@@ -1,5 +1,6 @@
 /* ---------- BODY ---------- */
 body {
+    height: 100%;
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
@@ -30,6 +31,11 @@ header {
     color: white;
     padding: 40px 20px;
     text-align: center;
+    min-height: 100vh; /* يغطي كامل ارتفاع الشاشة */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* مركز العناصر عمودياً */
+    align-items: center;    
 }
 
 header h1 {
